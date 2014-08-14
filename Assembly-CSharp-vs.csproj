@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\TruckManager.cs" />
      <Compile Include="Assets\Toon Character Pack\Scripts\AnimTriggers.cs" />
      <Compile Include="Assets\Toon Character Pack\Scripts\BotControlScript.cs" />
+     <Compile Include="Assets\Toon Character Pack\Scripts\ExplodeHead.cs" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />

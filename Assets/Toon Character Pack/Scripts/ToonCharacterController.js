@@ -126,6 +126,12 @@ Destroy(GetComponent("BotControlScript"));
 			}
 }
 
+function DecapicateNow()
+{
+Decapitate(true, 0f, Vector3.up);
+
+}
+
 function Decapitate (explode:boolean, delay:float, force:Vector3) {
 	if(!_decapitated){
 		_decapitated = true;

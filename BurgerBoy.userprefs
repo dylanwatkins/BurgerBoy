@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Toon Character Pack/Scripts/ToonCharacterController.js">
+    <Files>
+      <File FileName="Assets/Scripts/QueueHandler.cs" Line="207" Column="27" />
+      <File FileName="Assets/Scripts/TruckManager.cs" Line="87" Column="23" />
+      <File FileName="Assets/Scripts/MovementHandler.cs" Line="22" Column="78" />
+      <File FileName="Assets/Scripts/BurgerCollisionHandler.cs" Line="25" Column="51" />
+      <File FileName="Assets/Toon Character Pack/Scripts/ToonCharacterController.js" Line="129" Column="23" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
