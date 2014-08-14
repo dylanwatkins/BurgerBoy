@@ -50,6 +50,8 @@
      <Compile Include="Assets\Quantum Theory\UCP\Editor\QT_CombineMeshes.cs" />
      <Compile Include="Assets\Quantum Theory\UCP\Editor\QT_Sky.cs" />
      <Compile Include="Assets\Quantum Theory\UCP\Editor\QT_TrafficLightControllerInspector.cs" />
+     <Compile Include="Assets\Toon_Level_Kit\TLK-Medias\Scripts\Editor\ButterflyInspector.cs" />
+     <Compile Include="Assets\Toon_Level_Kit\TLK-Medias\Scripts\Editor\MaxAtlasSize.cs" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
@@ -59,6 +61,7 @@
      <None Include="Assets\Quantum Theory\UCP\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Toon Character Pack\Shaders\Projector Multiply.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+     <None Include="Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
      <None Include="Assets\Quantum Theory\UCP\Materials\Shaders\Optimized\QT_SpecularEmissive.shader" />
@@ -68,6 +71,7 @@
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
      <None Include="Assets\Quantum Theory\UCP\Materials\Shaders\Optimized\QT_BumpedSpecular.shader" />
+     <None Include="Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\VignetteShader.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlur.shader" />
@@ -83,9 +87,13 @@
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\Toon_Level_Kit\Documentation\Readme.txt" />
+     <None Include="Assets\Toon_Level_Kit\TLK-Medias\Materials\GlassTypeA.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
+     <None Include="Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation-Lightmap.shader" />
+     <None Include="Assets\Toon_Level_Kit\TLK-Medias\Shaders\Glass.shader" />
      <None Include="Assets\Quantum Theory\UCP\Materials\Shaders\Optimized\QT_Architecture.shader" />
      <None Include="Assets\Toon Character Pack\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
@@ -112,6 +120,7 @@
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\Toon Character Pack\_Toon Character Pack.txt" />
+     <None Include="Assets\Toon_Level_Kit\TLK-Medias\Shaders\Leave.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
@@ -154,7 +163,7 @@
      <None Include="Assets\Quantum Theory\Quantum MetaClouds Sample\Shaders\QuantumMetaCloud-SoftAlphaBlend.shader" />
      <None Include="Assets\Quantum Theory\UCP\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>/Users/dylan/Desktop/business/ocvr/BurgerBoy/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>/Users/dylanwatkins/BurgerBoy/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
