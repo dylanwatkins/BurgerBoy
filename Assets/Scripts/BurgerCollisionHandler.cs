@@ -17,6 +17,7 @@ public class BurgerCollisionHandler : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision) {
+
 		this.gameObject.SetActive(false);
 		truck.GetComponent<TruckManager>().addBurgerToQueue(this.gameObject);
 
@@ -27,9 +28,10 @@ public class BurgerCollisionHandler : MonoBehaviour {
 				collision.gameObject.SetActive(false);
 				GameObject.Find("MovementQueueManager").GetComponent<MovementHandler>().score += 100;
 			}
-//			
+			
 
 		}
+
 
 	}
 	

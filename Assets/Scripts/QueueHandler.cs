@@ -10,6 +10,7 @@ public class QueueHandler : MonoBehaviour {
 	public GameObject truck;
 	public GameObject scenery;
 	public GameObject characters;
+	public GameObject obstacles;
 
 	//private building variables
 	Queue<GameObject> buildingQueue = new Queue<GameObject>();
@@ -28,6 +29,12 @@ public class QueueHandler : MonoBehaviour {
 	List<GameObject> visibleCharacters = new List<GameObject>();
 	GameObject lastCharacter;
 
+	//private obstacles variables
+	Queue<GameObject> obstacleQueue = new Queue<GameObject>();
+	List<GameObject> obstacleList = new List<GameObject>();
+	List<GameObject> visibleObstacles = new List<GameObject>();
+	GameObject lastObstacle;
+
 
 
 
@@ -45,6 +52,9 @@ public class QueueHandler : MonoBehaviour {
 		initCharacters();
 		buildCharacters();
 
+		//build the obstacles
+		initObstacles();
+		buildObstacles();
 	}
 	
 	// Update is called once per frame
@@ -53,12 +63,13 @@ public class QueueHandler : MonoBehaviour {
 		removeBuildings();
 		removeScenery();
 		removeCharacters();
+		removeObstacles();
 
 		//check to add buildings and scenery and scenery
 		addBuildings();
 		addScenery();
 		addCharacters();
-
+		addObstacles();
 
 
 	}
@@ -110,6 +121,22 @@ public class QueueHandler : MonoBehaviour {
 			characterQueue.Enqueue(clone);
 		}
 
+	}
+
+
+	void initObstacles() {
+		//put the obstacles into a list to randomize it
+		foreach (Transform child in obstacles.transform){
+			child.transform.Translate(obstacles.transform.position);
+			obstacleList.Add(child.gameObject);
+		}
+		//add 25 random obstacles to a queue
+		for (int i=0; i<25; i++){
+			GameObject clone;
+			clone = Instantiate(obstacleList[Random.Range(0, obstacleList.Count)], transform.position, transform.rotation) as GameObject;
+			clone.SetActive(false);
+			obstacleQueue.Enqueue(clone);
+		}
 	}
 
 
@@ -166,6 +193,24 @@ public class QueueHandler : MonoBehaviour {
 		}
 	}
 
+	void buildObstacles() {
+		GameObject obstacle = obstacleQueue.Dequeue();
+		visibleObstacles.Add(obstacle);
+		obstacle.SetActive(true);
+		obstacle.transform.position = new Vector3(50F,-2.6f, 0);
+		obstacle.transform.rotation = Quaternion.Euler(270f, 80, 0);
+		lastObstacle = obstacle;
+		
+		while (obstacleQueue.Count > 0) {
+			obstacle = obstacleQueue.Dequeue();
+			visibleObstacles.Add(obstacle);
+			obstacle.SetActive(true);
+			obstacle.transform.position = new Vector3((lastObstacle.transform.position.x + 50 + obstacle.renderer.bounds.size.x), -2.6f, Random.Range(-4.5f, 8.1f)); 
+			obstacle.transform.rotation = Quaternion.Euler(270f, 80, 0);
+			lastObstacle = obstacle;
+		}
+	}
+
 
 
 	void removeBuildings() {
@@ -175,8 +220,34 @@ public class QueueHandler : MonoBehaviour {
 			visibleBuildings.RemoveAt(0);
 		}
 	}
+	
+
+	
+	void removeScenery() {
+		if (visibleScenery[0].transform.position.x + 250 < (truck.transform.position.x - 15)){
+			visibleScenery[0].SetActive(false);
+			sceneryQueue.Enqueue(visibleScenery[0]);
+			visibleScenery.RemoveAt(0);
+		}
+	}
 
 
+	void removeCharacters() {
+		if (visibleCharacters[0].transform.position.x + 25 < (truck.transform.position.x - 15)){
+			visibleCharacters[0].SetActive(false);
+			characterQueue.Enqueue(visibleCharacters[0]);
+			visibleCharacters.RemoveAt(0);
+		}
+	}
+
+	void removeObstacles() {
+		if (visibleObstacles[0].transform.position.x < (truck.transform.position.x - 100)){
+			visibleObstacles[0].SetActive(false);
+			obstacleQueue.Enqueue(visibleObstacles[0]);
+			visibleObstacles.RemoveAt(0);
+		}
+	}
+	
 	void addBuildings() {
 		if (buildingQueue.Count > 0) {
 			GameObject building = buildingQueue.Dequeue();
@@ -186,15 +257,16 @@ public class QueueHandler : MonoBehaviour {
 		}
 	}
 
-	void removeScenery() {
-		if (visibleScenery[0].transform.position.x + 250 < (truck.transform.position.x - 15)){
-			visibleScenery[0].SetActive(false);
-			sceneryQueue.Enqueue(visibleScenery[0]);
-			visibleScenery.RemoveAt(0);
+
+	void addCharacters() {
+		if (characterQueue.Count > 0) {
+			GameObject character = characterQueue.Dequeue();
+			character.SetActive(true);
+			character.transform.position = new Vector3((visibleCharacters[visibleCharacters.Count -1].transform.position.x + Random.Range(10, 35)),-2.838237f, 11.61761f); 
+			visibleCharacters.Add(character);
 		}
 	}
-	
-	
+
 	void addScenery() {
 		if (sceneryQueue.Count > 0) {
 			GameObject scenery = sceneryQueue.Dequeue();
@@ -204,21 +276,13 @@ public class QueueHandler : MonoBehaviour {
 		}
 	}
 
-	void removeCharacters() {
-		if (visibleCharacters[0].transform.position.x + 25 < (truck.transform.position.x - 15)){
-			visibleCharacters[0].SetActive(false);
-			characterQueue.Enqueue(visibleCharacters[0]);
-			visibleCharacters.RemoveAt(0);
+	void addObstacles() {
+		if (obstacleQueue.Count > 0) {
+			GameObject obstacle = obstacleQueue.Dequeue();
+			obstacle.SetActive(true);
+			obstacle.transform.position = new Vector3((visibleObstacles[visibleObstacles.Count -1].transform.position.x + 50 + obstacle.renderer.bounds.size.x), -2.6f, Random.Range(-4.5f, 8.1f)); 
+			visibleObstacles.Add(obstacle);
 		}
 	}
-	
-	
-	void addCharacters() {
-		if (characterQueue.Count > 0) {
-			GameObject character = characterQueue.Dequeue();
-			character.SetActive(true);
-			character.transform.position = new Vector3((visibleCharacters[visibleCharacters.Count -1].transform.position.x + Random.Range(10, 35)),-2.838237f, 11.61761f); 
-			visibleCharacters.Add(character);
-		}
-	}
+
 }

@@ -5,8 +5,10 @@ using System.Collections.Generic;
 
 public class TruckManager : MonoBehaviour {
 
+	public int lives;
 	public float truckSpeed;
 	public float burgerForce;
+	public float burgerForceForward;
 	public float maxLeft;
 	public float maxRight;
 	public GameObject burger;
@@ -25,6 +27,7 @@ public class TruckManager : MonoBehaviour {
 			burgers.Enqueue(clone);
 		}
 		originalForwardSpeed = movementHandler.GetComponent<MovementHandler>().forwardSpeed;
+		burgerForceForward = burgerForce;
 		center = this.transform.rotation.y;
 	}
 	
@@ -82,23 +85,35 @@ public class TruckManager : MonoBehaviour {
 			}
 		}
 
+		//shoot a burger
 		if (Input.GetKeyDown(KeyCode.Space)){
 			if (burgers.Count > 0) {
 				clone = burgers.Dequeue();
 				clone.SetActive(true);
 				clone.rigidbody.velocity = Vector3.zero;
-				clone.transform.position = transform.position;
+				clone.transform.position = new Vector3(transform.position.x + 4, transform.position.y, transform.position.z + 3);
 				clone.transform.rotation = new Quaternion(0, 180, 180, 0);
 				clone.rigidbody.AddForce(clone.transform.up * burgerForce);
-				clone.rigidbody.AddForce(-clone.transform.right * burgerForce * (movementHandler.GetComponent<MovementHandler>().forwardSpeed * 0.25f));
+				clone.rigidbody.AddForce(-clone.transform.right * (burgerForceForward + (movementHandler.GetComponent<MovementHandler>().forwardSpeed * 10)));
+
+				if (burgerForceForward < 2000) {
+					burgerForceForward += movementHandler.GetComponent<MovementHandler>().forwardSpeed;
+					burgerForce += movementHandler.GetComponent<MovementHandler>().forwardSpeed / 4;
+				}
+				else if (burgerForceForward >= 2000 && burgerForceForward < 4000){
+					burgerForceForward += movementHandler.GetComponent<MovementHandler>().forwardSpeed / 4;
+					burgerForce += movementHandler.GetComponent<MovementHandler>().forwardSpeed / 10;
+				}
 			}
 		}
 
 	}
 
+	//add burger back to queue
 	public void addBurgerToQueue(GameObject addItem){
 		burgers.Enqueue(addItem);
 	}
+
 
 
 
