@@ -33,11 +33,11 @@ public class RunningManager : MonoBehaviour {
 		this.GetComponent<Animator>().Play("Run");
 		if (choice == 0){
 			if (Time.time % 1 < 0.45f){
-				Debug.Log("Negative");
+
 				this.transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler(0, 215, 0), Time.deltaTime);
 			}
 			else {
-				Debug.Log("Positive");
+
 				this.transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler(0, -45, 0), Time.deltaTime);
 			}
 			//		this.transform.position += new Vector3(-Time.time * 0.008f, 0, anim.Evaluate(Time.time));

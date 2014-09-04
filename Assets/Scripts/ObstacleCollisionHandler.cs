@@ -30,7 +30,23 @@ public class ObstacleCollisionHandler : MonoBehaviour {
 			Debug.Log("GAME OVER");
 			this.gameObject.SetActive(false);
 			gameOver.gameObject.SetActive(true);
+
+			WWWForm form = new WWWForm();
+			form.AddField("initials","KAP");
+			form.AddField("score",GameObject.Find("MovementQueueManager").GetComponent<MovementHandler>().score); 
+			WWW url = new WWW("http://www.burgermonster.net/game", form);
+
+			if(url.isDone && url.error == null) {
+				gameOver.text = url.error;
+				print( "Error downloading: " + url.error );
+			} 
+			else if (url.isDone){
+				// show the highscores
+				gameOver.text = url.text;
+				print(url.text);
+			}
 			Time.timeScale = 0.0f;
+
 		}
 	}
 	

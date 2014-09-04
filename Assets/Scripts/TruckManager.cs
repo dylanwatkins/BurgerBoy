@@ -120,9 +120,11 @@ public class TruckManager : MonoBehaviour {
 
 	public void pauseGame() {
 		if (Time.timeScale == 0){
+			this.gameObject.SetActive(true);
 			Time.timeScale = 1;
 		}
 		else {
+			this.gameObject.SetActive(false);
 			Time.timeScale = 0;
 		}
 	}
