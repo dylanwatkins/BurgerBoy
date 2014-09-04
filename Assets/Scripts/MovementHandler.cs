@@ -12,7 +12,6 @@ public class MovementHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		forwardSpeed = 4;
 		score = 0;
 	}
 	
@@ -26,11 +25,5 @@ public class MovementHandler : MonoBehaviour {
 		forwardSpeed += 0.01f;
 	}
 
-	void OnGUI() {
-		GUI.Box(new Rect (Screen.width - 100, Screen.height - 60 ,90,50),  "SCORE: " + score.ToString());
-		GUI.Box(new Rect(Screen.width -100, Screen.height - 110, 90, 40), "LIVES: " + truck.gameObject.GetComponent<TruckManager>().lives );
-		if (truck.gameObject.GetComponent<TruckManager>().lives == 0) {
-			GUI.Box(new Rect(Screen.width / 3, Screen.height / 3, Screen.width / 3, Screen.height / 4), "GAME OVER \n \n \n Final Score: " + score.ToString());
-		}
-	}
+
 }

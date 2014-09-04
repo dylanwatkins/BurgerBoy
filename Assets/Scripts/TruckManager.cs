@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+
 
 
 public class TruckManager : MonoBehaviour {
@@ -18,6 +20,7 @@ public class TruckManager : MonoBehaviour {
 	GameObject clone;
 	public GameObject movementHandler;
 	float center;
+	public RawImage[] burgerLives; 
 
 	// Use this for initialization
 	void Start () {
@@ -113,6 +116,27 @@ public class TruckManager : MonoBehaviour {
 	public void addBurgerToQueue(GameObject addItem){
 		burgers.Enqueue(addItem);
 	}
+
+
+	public void pauseGame() {
+		if (Time.timeScale == 0){
+			Time.timeScale = 1;
+		}
+		else {
+			Time.timeScale = 0;
+		}
+	}
+
+	public void restartGame() {
+		Application.LoadLevel(Application.loadedLevelName);
+		Time.timeScale = 1;
+	}
+
+	public void endGame() {
+		Application.Quit();
+	}
+
+
 
 
 

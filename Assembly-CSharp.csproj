@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\MovementHandler.cs" />
      <Compile Include="Assets\Scripts\ObstacleCollisionHandler.cs" />
      <Compile Include="Assets\Scripts\QueueHandler.cs" />
+     <Compile Include="Assets\Scripts\RunningManager.cs" />
      <Compile Include="Assets\Scripts\TruckManager.cs" />
      <Compile Include="Assets\Toon Character Pack\Scripts\AnimTriggers.cs" />
      <Compile Include="Assets\Toon Character Pack\Scripts\BotControlScript.cs" />

@@ -180,7 +180,7 @@ public class QueueHandler : MonoBehaviour {
 		visibleCharacters.Add(character);
 		character.SetActive(true);
 		character.transform.position = new Vector3(-21.58804f,-2.838237f, 11.61761f);
-		character.transform.rotation = Quaternion.Euler(0,180,0);
+		character.transform.rotation = Quaternion.Euler(0,270,0);
 		lastCharacter = character;
 		
 		while (characterQueue.Count > 0) {
@@ -188,7 +188,7 @@ public class QueueHandler : MonoBehaviour {
 			visibleCharacters.Add(character);
 			character.SetActive(true);
 			character.transform.position = new Vector3((lastCharacter.transform.position.x + Random.Range(10, 35)),-2.838237f, 11.61761f); 
-			character.transform.rotation = Quaternion.Euler(0,180,0);
+			character.transform.rotation = Quaternion.Euler(0,270,0);
 			lastCharacter = character;
 		}
 	}
