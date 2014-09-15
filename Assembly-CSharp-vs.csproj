@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\QueueHandler.cs" />
      <Compile Include="Assets\Scripts\RunningManager.cs" />
      <Compile Include="Assets\Scripts\TruckManager.cs" />
+     <Compile Include="Assets\Scripts\WelcomeScreenEventHandler.cs" />
      <Compile Include="Assets\Toon Character Pack\Scripts\AnimTriggers.cs" />
      <Compile Include="Assets\Toon Character Pack\Scripts\BotControlScript.cs" />
      <Compile Include="Assets\Toon Character Pack\Scripts\ExplodeHead.cs" />
